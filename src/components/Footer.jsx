@@ -18,13 +18,13 @@ const Footer = () => {
             </p>
             <div className="text-[#00040f] dark:text-white text-2xl flex gap-7 mt-5 max-sm:justify-evenly">
               <a
-                href="https://github.com/DhairyaMajmudar"
+                href="https://github.com/ravijat2026"
                 className=" hover:text-slate-500  dark:hover:text-sky-300"
               >
                 <SiGithub />
               </a>
               <a
-                href="https://www.linkedin.com/in/dhairya-majmudar/"
+                href="https://www.linkedin.com/in/ravi-jat-420287245/"
                 className=" hover:text-slate-500  dark:hover:text-sky-300"
               >
                 <SiLinkedin />
@@ -36,7 +36,7 @@ const Footer = () => {
                 <SiInstagram />
               </a>
               <a
-                href="https://twitter.com/majmudar777"
+                href="https://x.com/ravi__jat_"
                 className=" hover:text-slate-500  dark:hover:text-sky-300"
               >
                 <SiTwitter />
@@ -50,11 +50,11 @@ const Footer = () => {
             </div>
             <div className="flex gap-5 max-sm:justify-center">
               <button className="w-fit px-6 py-3 my-2  bg-gradient-to-r from-cyan-500 to-blue-500 text-black dark:text-white outline-none mt-10 mr-3 rounded cursor-pointer ">
-                <a href="">Resume</a>
+                <a href="https://drive.google.com/file/d/12ng2pFGMAIPDgc24Mp74fXTf6nZU3PsQ/view">Resume</a>
               </button>
               <button className="w-fit px-6 py-3 my-2  bg-gradient-to-r from-cyan-500 to-blue-500 text-black dark:text-white outline-none mt-10 mr-3 rounded cursor-pointer">
                 <a
-                  href="https://github.com/DhairyaMajmudar/Personal-Portfolio"
+                  href= 'https://github.com/ravijat2026'
                   className="flex gap-2 items-center justify-center"
                 >
                   <SiGithub />
