@@ -13,7 +13,7 @@ const Social = () => {
               LinkedIn <FaLinkedin size={30} />
             </>
           ),
-          href: "https://linkedin.com",
+          href: "https://www.linkedin.com/in/ravi-jat-420287245/",
           style: "rounded-tr-md bg-blue-500",
         },
         {
@@ -24,7 +24,7 @@ const Social = () => {
             </>
           ),
           style: "bg-black",
-          href: "https://github.com/theyashpatel",
+          href: "https://github.com/ravijat2026",
         },
         {
           id: 3,
@@ -34,7 +34,7 @@ const Social = () => {
             </>
           ),
           style: " bg-red-500",
-          href: "mailto:foo@gmail.com",
+          href: "mailto:ravijat2026@gmail.com",
         },
         {
           id: 4,
@@ -44,8 +44,7 @@ const Social = () => {
             </>
           ),
           style: "rounded-br-md bg-gray-500",
-          href: "/resume.pdf",
-          download: true,
+          href: "https://drive.google.com/file/d/12ng2pFGMAIPDgc24Mp74fXTf6nZU3PsQ/view",
         },
       ];
 
@@ -60,9 +59,8 @@ const Social = () => {
                     " " +
                     link.style
                   }>
-                <a href=''
+                <a href={link.href}
                 className='flex justify-between items-center w-full text-w text-white'
-                download={link.download}
                 target="_blank"
                 rel="noreferrer"
                 >
