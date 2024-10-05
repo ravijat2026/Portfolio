@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer base{
+    html{
+        font-family: "Raleway", sans-serif;
+    }
+}
+
+html {
+    @apply overflow-x-hidden scroll-smooth
+  };
+  
+  body {
+    @apply dark:bg-gradient-to-tl dark:from-[#000000] dark:to-[#0e1928] bg-[#e2e2e2ab]
+  };
