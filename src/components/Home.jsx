@@ -30,10 +30,11 @@ const Home = () => {
              
 
                 <div className='mt-4 flex w-[300px] md:w-[500px] gap-4'>
-                    <button className='group w-fit px-6 py-3 my-2 flex items-center rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer'>Github
+                    <a href = 'https://drive.google.com/file/d/12ng2pFGMAIPDgc24Mp74fXTf6nZU3PsQ/view'> <button className='group w-fit px-6 py-3 my-2 flex items-center rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer'>Resume
                         <span className='group-hover:rotate-90 duration-300'>
                         <MdOutlineKeyboardArrowRight size={25} className='ml-1'/></span>
-                    </button>
+                    </button></a>
+                   
 
                     
                 </div>
