@@ -31,7 +31,7 @@ const About = () => {
             <img
               src={ravi}
               alt="Ravi jat"
-              className="h-[320px] max-w-[350px] border-black dark:border-slate-500 border-4 rounded-full m-12"
+              className="max-h-[320px] max-w-[320px] border-black dark:border-slate-500 border-4 rounded-full m-12"
             />
           </div>
         </div>
