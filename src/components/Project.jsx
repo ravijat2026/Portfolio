@@ -61,7 +61,7 @@ const Project = () => {
     },
   ]
   return (
-        <div name = "Projects" className="p-5 mx-20 mb-10 min-h-screen max-sm:p-2 max-sm:mx-5">
+        <div name = "Projects" className="p-5 mx-20 mb-10 mt-20 min-h-screen max-sm:p-2 max-sm:mx-5">
         <h1 className="text-[#00040f] dark:text-slate-300 text-center font-extrabold text-5xl mb-5 max-sm:text-4xl   ">
           Projects
         </h1>
