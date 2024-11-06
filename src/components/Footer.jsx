@@ -1,23 +1,64 @@
 import React from 'react'
 import { SiGithub, SiGmail, SiInstagram, SiLinkedin, SiTwitter } from 'react-icons/si';
+import { FaChevronCircleRight, FaPhone, FaEnvelope, FaMapMarkedAlt } from 'react-icons/fa';
 import ravi from '../assets/icon.png'
+import { Link } from 'react-scroll';
+
 const Footer = () => {
   return (
     <>
       <section
         className="dark:bg-[#111827] p-5 mt-[5rem] font-['Poppins']  max-sm:p-2 "
       >
-        <div className=" rounded-2xl shadow-xl WRAPPER mx-2 flex justify-between p-7 mb-7 flex-col-reverse  md:flex md:flex-row max-sm:p-2">
-          <div className="p-7">
-            <h2 className="text-[#00040f] font-semibold dark:text-slate-300 leading-7 text-xl tracking-wider max-sm:text-center">
-              Ravi Jat
-            </h2>
-            <p className="text-gray-600 dark:text-slate-400 leading-[30.8px] mt-7 max-w-[400px] max-sm:text-center">
-            GSC’24 Regionalist | GSSoC'24 | Technical Team Lead - Paryavaran Shakti | Video Editing Lead - Neon
-               | IIIT Kota'26
-            </p>
-            <div className="text-[#00040f] dark:text-white text-2xl flex gap-7 mt-5 max-sm:justify-evenly">
-              <a
+        <div className="flex flex-wrap justify-center md:ml-16">
+        <div className="flex-1 min-w-[22rem] mx-10 my-6 text-gray-600 dark:text-gray-400">
+          <div className='flex gap-4 items-center mb-4'>
+            <img src={ravi} className='w-20 h-20' alt='Profile Picture' />
+            <div className='text-[#00040f] dark:text-white'>
+            <h3 className="text-2xl font-bold">Ravi Jat </h3>
+            <h3 className="text-lg font-bold">Web Developer </h3>
+
+            </div>
+          </div>
+          
+          <p className="text-lg  mb-4">
+          GSC’24 Regionalist | GSSoC'24 | Technical Team Lead - Paryavaran Shakti | Video Editing Lead - Neon | IIIT Kota'26
+          </p>
+        </div>
+
+        <div className="flex-1 min-w-[22rem] mx-10 my-6 text-[#00040f] dark:text-white">
+          <h3 className="text-2xl mb-4 font-bold">Quick Links</h3>
+          <Link to="Home" className="text-lg cursor-pointer hover:text-slate-500  dark:hover:text-sky-300 block mb-2 hover:scale-y-110 hover:font-semibold">
+            <FaChevronCircleRight className="inline pr-2" /> Home
+          </Link>
+          <Link to="About" className="text-lg cursor-pointer hover:text-slate-500  dark:hover:text-sky-300 block mb-2 hover:scale-y-110 hover:font-semibold">
+            <FaChevronCircleRight className="inline pr-2" /> About
+          </Link>
+          <Link to="Skills" className="text-lg cursor-pointer hover:text-slate-500  dark:hover:text-sky-300 block mb-2 hover:scale-y-110 hover:font-semibold">
+            <FaChevronCircleRight className="inline pr-2" /> Skills
+          </Link>
+          <Link to="Projects" className="text-lg cursor-pointer hover:text-slate-500  dark:hover:text-sky-300 block mb-2 hover:scale-y-110 hover:font-semibold">
+            <FaChevronCircleRight className="inline pr-2" /> Projects
+          </Link>
+          <Link to="Contact" className="text-lg cursor-pointer hover:text-slate-500  dark:hover:text-sky-300 block mb-2 hover:scale-y-110 hover:font-semibold">
+            <FaChevronCircleRight className="inline pr-2" /> Contact
+          </Link>
+         
+        </div>
+
+        <div className="flex-1 min-w-[22rem] mx-10 my-6 text-[#00040f] dark:text-white">
+          <h3 className="text-2xl mb-4 font-bold">Connect with me</h3>
+          <p className="text-lg mb-2">
+            <FaPhone className="inline size-6 pr-2" /> +91 80786-89615
+          </p>
+          <p className="text-lg  mb-2">
+            <FaEnvelope className="inline size-6 pr-2" /> ravijat2026@gmail.com
+          </p>
+          <p className="text-lg  mb-2">
+            <FaMapMarkedAlt className="inline size-6 pr-2" /> Kota, India-325003
+          </p>
+          <div className="text-[#00040f] dark:text-white text-2xl flex mt-4 space-x-4">
+          <a
                 href="https://github.com/ravijat2026"
                 className=" hover:text-slate-500  dark:hover:text-sky-300"
               >
@@ -42,38 +83,16 @@ const Footer = () => {
                 <SiTwitter />
               </a>
               <a
-                href="ravijat2026@gmail.com"
+                href="mailto:ravijat2026@gmail.com"
                 className=" hover:text-slate-500  dark:hover:text-sky-300"
               >
                 <SiGmail />
               </a>
-            </div>
-            <div className="flex gap-5 max-sm:justify-center">
-              <button className="w-fit px-6 py-3 my-2  bg-gradient-to-r from-cyan-500 to-blue-500 text-black dark:text-white outline-none mt-10 mr-3 rounded cursor-pointer ">
-                <a href="https://drive.google.com/file/d/12ng2pFGMAIPDgc24Mp74fXTf6nZU3PsQ/view">Resume</a>
-              </button>
-              <button className="w-fit px-6 py-3 my-2  bg-gradient-to-r from-cyan-500 to-blue-500 text-black dark:text-white outline-none mt-10 mr-3 rounded cursor-pointer">
-                <a
-                  href= 'https://github.com/ravijat2026'
-                  className="flex gap-2 items-center justify-center"
-                >
-                  <SiGithub />
-                  Github
-                </a>
-              </button>
-            </div>
-          </div>
-
-          <div className="IMG p-0 max-sm:grid max-sm:place-content-center">
-            <img
-              src={ravi}
-              alt="Ravi jat"
-              className="h-[200px] border-black dark:border-slate-500 border-4 rounded-full mt-12"
-            />
           </div>
         </div>
+      </div>
 
-        <p className="text-[#00040f] dark:text-slate-300 mx-2 text-center capitalize tracking-widest max-sm:text-sm p-2">
+        <p className="text-[#00040f] dark:text-slate-300 mx-2 text-center capitalize tracking-widest max-sm:text-sm p-2 mt-3 border-t-2 dark:border-sky-800 border-slate-300">
           made with ❤️ by Ravi Jat.All rights reserved.
         </p>
       </section>
@@ -81,4 +100,10 @@ const Footer = () => {
   );
 }
 
-export default Footer
+
+
+
+    
+
+
+export default Footer;
