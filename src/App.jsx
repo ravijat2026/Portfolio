@@ -10,6 +10,7 @@ import Education from "./components/Education";
 import Footer from "./components/Footer";
 import Project from "./components/Project";
 import  About  from "./components/About";
+import  Top from "./components/Top";
 
 
 const override = {
@@ -44,6 +45,7 @@ const App = () => {
         </div>
       ) : (
         <div>
+          <Top />
           <Navbar />
           <Home />
 
