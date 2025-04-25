@@ -34,11 +34,14 @@ const Footer = () => {
           <Link to="About" className="text-lg cursor-pointer hover:text-slate-500  dark:hover:text-sky-300 block mb-2 hover:scale-y-110 hover:font-semibold">
             <FaChevronCircleRight className="inline pr-2" /> About
           </Link>
-          <Link to="Skills" className="text-lg cursor-pointer hover:text-slate-500  dark:hover:text-sky-300 block mb-2 hover:scale-y-110 hover:font-semibold">
-            <FaChevronCircleRight className="inline pr-2" /> Skills
+          <Link to="Experience" className="text-lg cursor-pointer hover:text-slate-500  dark:hover:text-sky-300 block mb-2 hover:scale-y-110 hover:font-semibold">
+            <FaChevronCircleRight className="inline pr-2" /> Experience
           </Link>
           <Link to="Projects" className="text-lg cursor-pointer hover:text-slate-500  dark:hover:text-sky-300 block mb-2 hover:scale-y-110 hover:font-semibold">
             <FaChevronCircleRight className="inline pr-2" /> Projects
+          </Link>
+          <Link to="Skills" className="text-lg cursor-pointer hover:text-slate-500  dark:hover:text-sky-300 block mb-2 hover:scale-y-110 hover:font-semibold">
+            <FaChevronCircleRight className="inline pr-2" /> Skills
           </Link>
           <Link to="Contact" className="text-lg cursor-pointer hover:text-slate-500  dark:hover:text-sky-300 block mb-2 hover:scale-y-110 hover:font-semibold">
             <FaChevronCircleRight className="inline pr-2" /> Contact

@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import Project from "./components/Project";
 import  About  from "./components/About";
 import  Top from "./components/Top";
+import Experience from "./components/Experience";
 
 
 const override = {
@@ -52,9 +53,9 @@ const App = () => {
           <About/>
           <Social />
           <Education/>
-         
-          <Skills/>
+          <Experience/>
           <Project/>
+          <Skills/>
           <Contact/>
           <Footer/>
         </div>

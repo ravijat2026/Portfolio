@@ -31,7 +31,7 @@ const Navbar = () => {
         },
         {
           id: 3,
-          link: "Skills",
+          link: "Experience",
         },
         {
           id: 4,
@@ -39,10 +39,14 @@ const Navbar = () => {
         },
         {
           id: 5,
+          link: "Skills",
+        },
+        {
+          id: 6,
           link: "Contact",
         },
         {
-          id:6,
+          id:7,
           link: (
             <button onClick={handleTheme}>
               {theme === "dark" ? (
