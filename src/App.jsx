@@ -55,8 +55,8 @@ const App = () => {
           <Education/>
           <Experience/>
           <Project/>
-          <Skills/>
-          <Contact/>
+           <Skills/>
+           <Contact/>
           <Footer/>
         </div>
       )}

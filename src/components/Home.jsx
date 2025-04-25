@@ -15,7 +15,7 @@ const Home = () => {
       });
 
   return (
-    <div name = "Home" className='h-screen w-full text-[#00040f] dark:text-[#e1e1e1]'>
+    <div name = "Home" className='h-screen w-screen text-[#00040f] dark:text-[#e1e1e1]'>
         <div className='w-full mt- mx-auto flex flex-col items-center justify-center h-full  md:flex-row md:gap-24 px-4 ml-4 md:ml-8'>
             <div className='flex flex-col mt-32 md:mt-4 justify-center'>
                 <h2 className='text-4xl md:text-6xl font-bold py-4'>

@@ -1,4 +1,4 @@
-import React, { useEffect} from 'react'
+import React, { useEffect, useState } from 'react'
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -9,13 +9,28 @@ import p4 from "../assets/portfolio/p4.png"
 import p5 from "../assets/portfolio/p5.png"
 import p6 from "../assets/portfolio/p6.png"
 import { FaGithub, FaLink } from 'react-icons/fa';
+import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
+
 const Project = () => {
+  const [showAll, setShowAll] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     AOS.init();
+    // Check if the screen is mobile size
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // Tailwind's 'md' breakpoint is 768px
+    };
+    
+    // Set initial value
+    handleResize();
+    
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
-
-
 
   const project = [
     {
@@ -60,57 +75,82 @@ const Project = () => {
       githubLink: 'https://github.com/ravijat2026/Hospital-website',
       projectLink: 'https://hospital-website-lake.vercel.app/'
     },
-  ]
-  return (
-        <div name = "Projects" className="p-5 mx-20 mb-10 mt-10 min-h-screen max-sm:p-2 max-sm:mx-5">
-        <h1 className="text-[#00040f] dark:text-slate-300 text-center font-extrabold text-5xl my-5  max-sm:text-4xl   ">
-          Projects
-        </h1>
-      
-        <div
-          className="flex gap-7 justify-between items-center flex-row-reverse max-sm:flex-col"
-          data-aos="fade-right"
-        >
-        
-          
-            <div className='flex flex-row flex-wrap justify-between text-[#00040f] dark:text-[#e1e1e1]'>
-                  {project.map(({imgUrl, title, description, githubLink, projectLink}) => (
-                    <div
-                    className="w-[360px] h-[460px] dark:bg-[#1c2837] flex flex-col justify-between rounded-2xl shadow-2xl p-4 border-1 my-10"
-                    >
-                    <a href={projectLink} className='cursor-pointer'><img className='rounded-xl mb-4 h-48' src={imgUrl} alt={title} /> </a>
-                    <div>
-                        <h2 className='text-2xl font-bold mb-2'>{title}</h2>
-                        <p className='text-[11px] md:text-[13px]  mb-2'>{description}</p>
-                        
-                    </div>
-                    <div className='flex flex-row items-center justify-center gap-4'>
-                            {/* Code Button */}
-                            <a
-                                className='w-fit text-[12px] px-6 py-3 my-2 flex items-center rounded-full text-center bg-[#c6d0dd] hover:bg-[#c9dbf3] dark:bg-[#334155] dark:hover:bg-[#1e293b] cursor-pointer'
-                                href={githubLink}
-                                target='_blank'
-                                rel='noopener noreferrer'
-                            >
-                                <FaGithub className='mr-2 text-[16px]'/>Github
-                            </a>
-                            {/* Live Demo Button */}
-                            <a
-                                className='w-fit text-[12px] px-6 py-3 my-2 flex items-center rounded-full text-center bg-[#c6d0dd] hover:bg-[#c9dbf3] dark:bg-[#334155] dark:hover:bg-[#1e293b] cursor-pointer'
-                                href={projectLink}
-                                target='_blank'
-                                rel='noopener noreferrer'
-                            >
-                                <FaLink className='mr-2 text-[16px]'/>Live Link
-                            </a>
-                        </div>
-                </div>
-                  ))}
-                  
-                  
+  ];
 
+
+  const displayedProjects = isMobile ? (showAll ? project : project.slice(0, 3)) : project;
+
+  const toggleShowAll = () => {
+    setShowAll(!showAll);
+  };
+
+  return (
+    <div name="Projects" className="p-5 mx-20 mb-10 mt-10 min-h-screen max-sm:p-2 max-sm:mx-5">
+      <h1 className="text-[#00040f] dark:text-slate-300 text-center font-extrabold text-5xl my-5 max-sm:text-4xl">
+        Projects
+      </h1>
+    
+      <div
+        className="flex gap-7 justify-between items-center flex-row-reverse max-sm:flex-col"
+        data-aos="fade-right"
+      >
+        <div className='flex flex-row flex-wrap justify-center items-center text-[#00040f] dark:text-[#e1e1e1]'>
+          {displayedProjects.map(({imgUrl, title, description, githubLink, projectLink}) => (
+            <div
+              key={title}
+              className="w-[360px] h-[460px] dark:bg-[#1c2837] flex flex-col md:ml-10 lg:ml-16 justify-between rounded-2xl shadow-2xl p-4 border-1 my-7 hover:scale-105 transition-transform duration-300 ease-in-out"
+            >
+              <a href={projectLink} className='cursor-pointer'>
+                <img className='rounded-xl mb-4 h-48' src={imgUrl} alt={title} />
+              </a>
+              <div>
+                <h2 className='text-2xl font-bold mb-2'>{title}</h2>
+                <p className='text-[11px] md:text-[13px] mb-2'>{description}</p>
               </div>
+              <div className='flex flex-row items-center justify-center gap-4'>
+                <a
+                  className='w-fit text-[12px] px-6 py-3 my-2 flex items-center rounded-full text-center bg-[#c6d0dd] hover:bg-[#c9dbf3] dark:bg-[#334155] dark:hover:bg-[#1e293b] cursor-pointer'
+                  href={githubLink}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <FaGithub className='mr-2 text-[16px]'/>Github
+                </a>
+                <a
+                  className='w-fit text-[12px] px-6 py-3 my-2 flex items-center rounded-full text-center bg-[#c6d0dd] hover:bg-[#c9dbf3] dark:bg-[#334155] dark:hover:bg-[#1e293b] cursor-pointer'
+                  href={projectLink}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <FaLink className='mr-2 text-[16px]'/>Live Link
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
+      </div>
+
+      {/* Show button only on mobile devices */}
+      {isMobile && project.length > 3 && (
+        <div className="flex justify-center mt-6">
+          <button
+            onClick={toggleShowAll}
+            className="px-8 py-3 rounded-full font-medium text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition duration-300 ease-in-out shadow-lg flex items-center gap-2"
+          >
+            {showAll ? (
+              <>
+                Show Less
+                <FiChevronUp className="inline" />
+              </>
+            ) : (
+              <>
+                See More
+                <FiChevronDown className="inline" />
+              </>
+            )}
+          </button>
+        </div>
+      )}
     </div>
   )
 }
