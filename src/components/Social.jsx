@@ -44,7 +44,7 @@ const Social = () => {
             </>
           ),
           style: "rounded-br-md bg-gray-500",
-          href: "https://drive.google.com/file/d/12ng2pFGMAIPDgc24Mp74fXTf6nZU3PsQ/view",
+          href: "https://drive.google.com/file/d/1BMf3Il7NI9XkLhDcr0Xk8ZnC5GDyRKsZ/view?usp=sharing",
         },
       ];
 
