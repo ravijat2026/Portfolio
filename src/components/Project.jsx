@@ -1,15 +1,30 @@
 import React, { useEffect, useState } from 'react'
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Button } from "@mui/material";
+import { FaGithub } from "react-icons/fa";
+import { TbLogin2 } from "react-icons/tb";
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
+// Images
 import p1 from "../assets/portfolio/p1.png"
 import p2 from "../assets/portfolio/p2.png"
 import p3 from "../assets/portfolio/p3.png"
 import p4 from "../assets/portfolio/p4.png"
 import p5 from "../assets/portfolio/p5.png"
 import p6 from "../assets/portfolio/p6.png"
-import { FaGithub, FaLink } from 'react-icons/fa';
-import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
+
+import javascript from "../assets/javascript.png"
+import react from "../assets/react.png"
+import nextjs from "../assets/nextjs.png"
+import tailwind from "../assets/tailwind.png"
+import TypeScript from "../assets/TypeScript.jpg"
+import PostgreSQL from "../assets/PostgreSQL.jpeg"
+import node from "../assets/node.png"
+import express from "../assets/express.png"
+import mongodb from "../assets/mongodb.png"
+
+
 
 const Project = () => {
   const [showAll, setShowAll] = useState(false);
@@ -17,18 +32,9 @@ const Project = () => {
 
   useEffect(() => {
     AOS.init();
-    // Check if the screen is mobile size
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768); // Tailwind's 'md' breakpoint is 768px
-    };
-    
-    // Set initial value
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
     handleResize();
-    
-    // Add event listener
     window.addEventListener('resize', handleResize);
-    
-    // Cleanup
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
@@ -36,98 +42,104 @@ const Project = () => {
     {
       imgUrl: p1,
       title: 'JobPrepper',
-      description: "JobPrepper is a career assistance platform built with Next.js, TypeScript, and Prisma, designed to streamline resume building and interview preparation. It enabling users to craft professional resumes effortlessly while providing AI-driven interview guidance.",
+      description: "Career platform with Next.js, TypeScript, Prisma for resume building and AI interview prep.",
       githubLink: 'https://github.com/ravijat2026/JobPrepper',
       projectLink: 'https://job-prepper.vercel.app/',
+      icons: [nextjs, TypeScript,react, tailwind, node, PostgreSQL],
     },
     {
       imgUrl: p2,
       title: 'QueryMaster',
-      description: "QueryMaster is an AI-powered content generator built with Next.js, React, TypeScript, and Tailwind CSS, leveraging Gemini AI for personalized content creation. It features secure authentication and efficient database management using Drizzle ORM with PostgreSQL.",
+      description: "AI content generator with Gemini API, built using Next.js, TypeScript, Tailwind, PostgreSQL.",
       githubLink: 'https://github.com/ravijat2026/Ai-Content-Generator',
       projectLink: 'https://querymaster.vercel.app/',
+      icons: [nextjs,react, tailwind, TypeScript, node, PostgreSQL],
     },
     {
       imgUrl: p3,
       title: 'BlogAura',
-      description: 'BlogAura is a full-stack blogging platform built with React.js, Node.js, Express.js, and MongoDB, designed for seamless content creation and management. It features secure authentication with JWT and OTP-based login, ensuring robust security.',
+      description: "Full-stack blogging platform with authentication (JWT+OTP), React, Node, Express, MongoDB.",
       githubLink: 'https://github.com/ravijat2026/BlogAura',
-      projectLink: 'https://blog-aura.vercel.app/'
+      projectLink: 'https://blog-aura.vercel.app/',
+      icons: [react, tailwind, node, express, mongodb,javascript],
     },
     {
       imgUrl: p4,
       title: 'E-com',
-      description: 'This e-commerce platform allows users to browse and purchase products with ease, featuring a secure login and signup system. The admin dashboard enables the creation, update, and deletion of products and categories.',
+      description: "Complete e-commerce app with admin dashboard using React, Node, Express, MongoDB.",
       githubLink: 'https://github.com/ravijat2026/E-com',
-      projectLink: 'https://e-com-murex-two.vercel.app/'
+      projectLink: 'https://e-com-murex-two.vercel.app/',
+      icons: [react, tailwind, node,javascript, express, mongodb],
     },
     {
       imgUrl: p5,
-      title: 'Weather app',
-      description: 'This weather app provides real-time weather updates for any location. It features an intuitive interface, allowing users to quickly check current conditions, temperature, and forecasts with ease.',
+      title: 'Weather App',
+      description: "Real-time weather updates with clean UI built using React and TailwindCSS.",
       githubLink: 'https://github.com/ravijat2026/weather-app',
-      projectLink: 'https://weather-app-two-black-17.vercel.app/'
+      projectLink: 'https://password-generator-pearl-omega.vercel.app/',
+      icons: [react, tailwind],
     },
     {
       imgUrl: p6,
-      title: 'Hospital Website',
-      description: "This website houses the prototype codebase for our hospital's future website. The prototype demonstrates the design concept using CSS animations and JavaScript functionalities to showcase the envisioned user experience.",
-      githubLink: 'https://github.com/ravijat2026/Hospital-website',
-      projectLink: 'https://hospital-website-lake.vercel.app/'
+      title: 'Password Generator',
+      description: "This is a Password Generator web app built with React and Tailwind CSS.",
+      githubLink: 'https://github.com/ravijat2026/password-generator',
+      projectLink: 'https://hospital-website-lake.vercel.app/',
+      icons: [react, tailwind],
     },
   ];
 
-
   const displayedProjects = isMobile ? (showAll ? project : project.slice(0, 3)) : project;
-
-  const toggleShowAll = () => {
-    setShowAll(!showAll);
-  };
+  const toggleShowAll = () => setShowAll(!showAll);
 
   return (
     <div name="Projects" className="p-5 mx-20 mb-10 mt-10 min-h-screen max-sm:p-2 max-sm:mx-5">
       <h1 className="text-[#00040f] dark:text-slate-300 text-center font-extrabold text-5xl my-5 max-sm:text-4xl">
         Projects
       </h1>
-    
-      <div
-        className="flex gap-7 justify-between items-center flex-row-reverse max-sm:flex-col"
-        data-aos="fade-right"
-      >
-        <div className='flex flex-row flex-wrap justify-center items-center text-[#00040f] dark:text-[#e1e1e1]'>
-          {displayedProjects.map(({imgUrl, title, description, githubLink, projectLink}) => (
-            <div
-              key={title}
-              className="w-[360px] h-[460px] dark:bg-[#1c2837] flex flex-col md:ml-10 lg:ml-16 justify-between rounded-2xl shadow-2xl p-4 border-1 my-7 hover:scale-105 transition-transform duration-300 ease-in-out"
-            >
-              <a href={projectLink} className='cursor-pointer'>
-                <img className='rounded-xl mb-4 h-48' src={imgUrl} alt={title} />
-              </a>
-              <div>
-                <h2 className='text-2xl font-bold mb-2'>{title}</h2>
-                <p className='text-[11px] md:text-[13px] mb-2'>{description}</p>
+
+      <div className="flex flex-wrap justify-center items-center gap-16 mt-10" data-aos="fade-right">
+        {displayedProjects.map(({ imgUrl, title, description, githubLink, projectLink, icons }) => (
+          <div key={title} className="relative w-[390px] lg:w-[480px] xl:w-[500px] rounded-2xl overflow-hidden shadow-2xl dark:bg-[#1c2837] text-[#00040f] dark:text-[#e1e1e1] hover:scale-105 transition-transform duration-300 ease-in-out p-5">
+            <div className="relative flex flex-col gap-5 justify-between h-full">
+              <div className="wrapper flex gap-4 sm:flex-row flex-col-reverse">
+                <div className="flex flex-col sm:w-[40%]">
+                  <h1 className="text-2xl font-bold mb-2">{title}</h1>
+                  <p className="text-[13px] md:text-[14px]">{description}</p>
+                </div>
+                <div className="sm:w-[60%]">
+                  <a href={projectLink} target="_blank" rel="noopener noreferrer">
+                     <img className="rounded-xl cursor-pointer" src={imgUrl} alt={title} />
+                   </a>
+                </div>
               </div>
-              <div className='flex flex-row items-center justify-center gap-4'>
-                <a
-                  className='w-fit text-[12px] px-6 py-3 my-2 flex items-center rounded-full text-center bg-[#c6d0dd] hover:bg-[#c9dbf3] dark:bg-[#334155] dark:hover:bg-[#1e293b] cursor-pointer'
-                  href={githubLink}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  <FaGithub className='mr-2 text-[16px]'/>Github
-                </a>
-                <a
-                  className='w-fit text-[12px] px-6 py-3 my-2 flex items-center rounded-full text-center bg-[#c6d0dd] hover:bg-[#c9dbf3] dark:bg-[#334155] dark:hover:bg-[#1e293b] cursor-pointer'
-                  href={projectLink}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  <FaLink className='mr-2 text-[16px]'/>Live Link
-                </a>
+              <div className="flex flex-col sm:flex-row sm:justify-between items-center">
+                <div className="tech-stack flex flex-wrap gap-3 justify-center mt-3 sm:mt-0">
+                  {icons.map((icon, idx) => (
+                    <img key={idx} src={icon} alt="tech" className="w-8 h-8 object-contain" />
+                  ))}
+                </div>
+                <div className="flex gap-3 mt-4 sm:mt-0 items-center">
+                  {isMobile ? (
+                    <>
+                      <Button variant="outlined" href={githubLink} target="_blank">Github</Button>
+                      <Button variant="outlined" href={projectLink} target="_blank">Live</Button>
+                    </>
+                  ) : (
+                    <>
+                      <a title="Github" href={githubLink} target="_blank">
+                        <FaGithub className="h-8 w-8" />
+                      </a>
+                      <a title="Live Link" href={projectLink} target="_blank">
+                        <TbLogin2 className="h-8 w-8" />
+                      </a>
+                    </>
+                  )}
+                </div>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
 
       {/* Show button only on mobile devices */}
@@ -155,4 +167,4 @@ const Project = () => {
   )
 }
 
-export default Project
+export default Project;

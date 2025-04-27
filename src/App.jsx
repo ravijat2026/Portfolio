@@ -52,8 +52,8 @@ const App = () => {
 
           <About/>
           <Social />
-          <Education/>
           <Experience/>
+          <Education/>
           <Project/>
            <Skills/>
            <Contact/>
